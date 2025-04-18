@@ -359,7 +359,7 @@
             <p class="subtitle">Download for windows, and more info:</p>
             
             <div class="buttons">
-                <button class="btn btn-primary" onclick="window.location.href='#download'">
+                <button class="btn btn-primary" onclick="downloadFile()">
                     <div class="download-icon">
                         <div></div>
                         <div></div>
@@ -367,6 +367,20 @@
                         <div></div>
                     </div>
                 </button>
+
+                 <script>
+                    function downloadFile() {
+                      // GitHub Releases közvetlen fájl linkje
+                      const link = document.createElement("a");
+                      link.href = "https://github.com/albert12-ai/screenc/releases/download/release/screenc.exe";
+                      
+                      link.click();
+                    }
+                  </script>
+
+
+
+                
                 <button class="btn btn-secondary" onclick="window.location.href='#info'">
                     <span>info</span>
                 </button>

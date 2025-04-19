@@ -239,7 +239,7 @@
         .v1_49 {
             width: 100vw;
             height: 100vh;
-            background-image: url("v1_49.png");
+            background-image: url("images/v1_49.png");
             background-size: contain;
             background-repeat: no-repeat;
             background-position: top right;
@@ -255,7 +255,7 @@
         .v1_46 {
             width: clamp(60px, 10vw, 105px);
             height: clamp(60px, 10vw, 105px);
-            background: url("v1_46.png");
+            background: url("images/v1_46.png");
             background-repeat: no-repeat;
             background-position: center center;
             background-size: cover;
@@ -269,7 +269,7 @@
             max-width: 314px;
             height: auto;
             aspect-ratio: 314/575;
-            background: url("v1_68.png");
+            background: url("images/v1_68.png");
             background-repeat: no-repeat;
             background-position: center center;
             background-size: cover;
@@ -415,7 +415,7 @@
             100% { transform: rotate(360deg); }
         }
 
-        /* Additional responsive adjustments */
+        /* Enhanced responsive adjustments */
         @media screen and (max-width: 768px) {
             .header {
                 padding: 10% 5%;
@@ -436,6 +436,10 @@
                 background-size: contain;
                 background-position: center top;
             }
+            
+            .buttons {
+                justify-content: center;
+            }
         }
 
         @media screen and (max-width: 480px) {
@@ -446,19 +450,31 @@
             .features {
                 justify-content: center;
                 text-align: center;
+                flex-direction: column;
+                align-items: center;
             }
             
             .features-text {
                 text-align: center;
+                max-width: 90%;
             }
             
             .v1_49 {
-                opacity: 0.6;
+                opacity: 0.5;
                 width: 100vw; 
-                height: 100vh;
+                height: 80vh;
                 top: 10vh;
                 background-size: contain;
                 background-position: center top;
+            }
+            
+            .about-col {
+                align-items: center;
+                text-align: center;
+            }
+            
+            .v1_68 {
+                max-width: 260px;
             }
         }
     </style>
@@ -550,7 +566,7 @@
                 </div>
                 
                 <div class="about-col">
-                    <img src="/api/placeholder/400/320" alt="Windows SmartScreen Example" class="smartscreen-img">
+                    <img src="images/smartscreen.png" alt="Windows SmartScreen Example" class="smartscreen-img">
                     <p>Example of Windows SmartScreen protection. Click "More info" and then "Run anyway" to proceed.</p>
                 </div>
                 
@@ -577,7 +593,7 @@
                 </div>
                 
                 <div class="about-col">
-                    <img src="/api/placeholder/150/150" alt="Developer Profile" class="developer-img">
+                    <img src="images/developer.png" alt="Developer Profile" class="developer-img">
                     <h3>Project Developer</h3>
                     <p>Created with gamers in mind by a passionate developer who understands what competitive players need.</p>
                     

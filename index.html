@@ -117,6 +117,22 @@
             background: #262626;
             color: #EFA8E2;
         }
+        
+        .btn-tertiary {
+            background: #24292e;
+            color: #EFA8E2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        
+        /* GitHub icon */
+        .github-icon {
+            width: clamp(16px, 2vw, 24px);
+            height: clamp(16px, 2vw, 24px);
+            fill: #EFA8E2;
+        }
 
         .btn:hover {
             transform: translateY(-5px);
@@ -221,17 +237,17 @@
         }
 
         .v1_49 {
-            width: 100%;
-            height: 100%;
+            width: 100vw;
+            height: 100vh;
             background-image: url("v1_49.png");
-            background-size: cover;
-            opacity: 1;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: top right;
+            opacity: 0.8;
             position: absolute;
             top: 0;
             right: 0;
             z-index: 0;
-            transform: scale(0.6);
-            transform-origin: top right;
             pointer-events: none;
             animation: fadeIn 1s ease;
         }
@@ -266,6 +282,74 @@
 
         .v1_68:hover {
             transform: scale(1.05);
+        }
+        
+        /* SmartScreen image */
+        .smartscreen-img {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            border-radius: 7px;
+            margin: 20px auto;
+            display: block;
+            box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+            border: 2px solid #9644AA;
+        }
+        
+        /* Developer image */
+        .developer-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 20px auto;
+            display: block;
+            border: 3px solid #EFA8E2;
+            box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Open source section */
+        .opensource-section {
+            margin-top: 10vh;
+            background: #333333;
+            border-radius: 10px;
+            padding: clamp(20px, 5vw, 35px);
+            width: 90%;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.25);
+            animation: fadeInUp 0.8s ease forwards;
+            opacity: 0;
+            transform: translateY(40px);
+            animation-delay: 1.2s;
+        }
+        
+        .github-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin: 20px 0;
+            padding: 10px 25px;
+            background: #24292e;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: clamp(16px, 2.5vw, 20px);
+            transition: all 0.3s ease;
+            border: 2px solid #EFA8E2;
+        }
+        
+        .github-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+        }
+        
+        .github-link svg {
+            width: 24px;
+            height: 24px;
+            fill: white;
         }
 
         /* Loading animation */
@@ -346,8 +430,11 @@
             }
             
             .v1_49 {
-                opacity: 0.5;
-                transform: scale(0.8);
+                opacity: 0.7;
+                width: 100vw;
+                height: 100vh;
+                background-size: contain;
+                background-position: center top;
             }
         }
 
@@ -366,7 +453,12 @@
             }
             
             .v1_49 {
-                opacity: 0.3;
+                opacity: 0.6;
+                width: 100vw; 
+                height: 100vh;
+                top: 10vh;
+                background-size: contain;
+                background-position: center top;
             }
         }
     </style>
@@ -397,6 +489,12 @@
 
                 <button class="btn btn-secondary" onclick="window.location.href='#info'">
                     <span>info</span>
+                </button>
+                
+                <button class="btn btn-tertiary" onclick="window.location.href='#opensource'">
+                    <svg class="github-icon" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+                    </svg>
                 </button>
             </div>
 
@@ -435,6 +533,69 @@
                     <p>-Customize the crosshair's size and color to your liking</p>
                     <br><br>
                     <p>-Show/hide crosshair</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="about-section" id="smartscreen">
+            <h2 class="about-title">Windows SmartScreen Notice</h2>
+            
+            <div class="about-content">
+                <div class="about-col">
+                    <h3>Running the Software</h3>
+                    <p>When you first run the installer, Windows SmartScreen might display a warning. This is normal for new software that isn't widely distributed yet.</p>
+                    
+                    <h3>How to proceed:</h3>
+                    <p>Simply click on "More info" and then "Run anyway" to continue with the installation. This message appears because our software is new and not yet widely downloaded.</p>
+                </div>
+                
+                <div class="about-col">
+                    <img src="/api/placeholder/400/320" alt="Windows SmartScreen Example" class="smartscreen-img">
+                    <p>Example of Windows SmartScreen protection. Click "More info" and then "Run anyway" to proceed.</p>
+                </div>
+                
+                <div class="about-col">
+                    <h3>Is it safe?</h3>
+                    <p>Yes! Our software is completely safe and open source. You can review the code on our GitHub repository (link below).</p>
+                    
+                    <h3>Help us grow</h3>
+                    <p>By using our software, you help us increase our distribution, which will eventually eliminate these SmartScreen warnings for future users.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="opensource-section" id="opensource">
+            <h2 class="about-title">Open Source Project</h2>
+            
+            <div class="about-content">
+                <div class="about-col">
+                    <h3>Transparent & Trustworthy</h3>
+                    <p>ScreenCrosshair is fully open source - we believe in transparency. You can review our entire codebase to verify there's nothing harmful or unwanted in our software.</p>
+                    
+                    <h3>Community Driven</h3>
+                    <p>We welcome contributions from the community! Feel free to suggest improvements or report issues through our GitHub repository.</p>
+                </div>
+                
+                <div class="about-col">
+                    <img src="/api/placeholder/150/150" alt="Developer Profile" class="developer-img">
+                    <h3>Project Developer</h3>
+                    <p>Created with gamers in mind by a passionate developer who understands what competitive players need.</p>
+                    
+                    <a href="https://github.com/albert12-ai/screenc" class="github-link" target="_blank">
+                        <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                            <path fill="white" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+                        </svg>
+                        View on GitHub
+                    </a>
+                </div>
+                
+                <div class="about-col">
+                    <h3>Why Open Source?</h3>
+                    <p>By making our code open source:</p>
+                    <p>- You can verify it's safe</p>
+                    <p>- No hidden monitoring or data collection</p>
+                    <p>- Community can help improve the software</p>
+                    <p>- Transparent development process</p>
                 </div>
             </div>
         </div>
